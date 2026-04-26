@@ -7,23 +7,24 @@
 패키지를 설치하지 않고 `npx`로 실행합니다.
 
 ```bash
-SEOUL_OPENAPI_KEY=발급받은_인증키 npx seoul-openapi-mcp
+SEOUL_OPENAPI_KEY=발급받은_일반_인증키 SEOUL_SUBWAY_OPENAPI_KEY=발급받은_지하철_인증키 npx seoul-openapi-mcp
 ```
 
-`SEOUL_OPENAPI_KEY`에는 서울 열린데이터광장 인증키를 넣습니다.
+`SEOUL_OPENAPI_KEY`에는 일반 서울 열린데이터광장 인증키를 넣고, `SEOUL_SUBWAY_OPENAPI_KEY`에는 지하철 OpenAPI 호스트용 인증키를 넣습니다.
 
 ## MCP 클라이언트 설정 예시
 
-MCP 클라이언트 설정에 아래 서버를 추가합니다. `command`는 `npx`, `args`는 패키지명 `seoul-openapi-mcp`입니다.
+MCP 클라이언트 설정에 아래 서버를 추가합니다. `command`는 `npx`, `args`는 자동 설치 확인 옵션 `-y`와 패키지명 `seoul-openapi-mcp`입니다.
 
 ```json
 {
   "mcpServers": {
     "seoul-openapi": {
       "command": "npx",
-      "args": ["seoul-openapi-mcp"],
+      "args": ["-y", "seoul-openapi-mcp"],
       "env": {
-        "SEOUL_OPENAPI_KEY": "발급받은_인증키"
+        "SEOUL_OPENAPI_KEY": "발급받은_일반_인증키",
+        "SEOUL_SUBWAY_OPENAPI_KEY": "발급받은_지하철_인증키"
       }
     }
   }
@@ -35,6 +36,7 @@ MCP 클라이언트 설정에 아래 서버를 추가합니다. `command`는 `np
 | 도구 | 설명 | 주요 입력 |
 | --- | --- | --- |
 | `seoul_get_air_quality_by_district` | `ListAirQualityByDistrictService`에서 서울시 실시간 자치구별 최신 대기환경 현황을 조회합니다. | 선택 `districtCode`, 선택 `districtName` |
+| `seoul_get_subway_realtime_station_arrival` | `realtimeStationArrival`에서 서울시 지하철역 실시간 도착정보를 조회합니다. | 필수 `stationName`, 선택 `startIndex`, 선택 `endIndex` |
 
 ## 로컬 개발
 
@@ -46,7 +48,7 @@ cp .env.example .env
 pnpm dev
 ```
 
-`.env`의 `SEOUL_OPENAPI_KEY`에 서울 열린데이터광장 인증키를 넣습니다.
+`.env`의 `SEOUL_OPENAPI_KEY`와 `SEOUL_SUBWAY_OPENAPI_KEY`에 호스트별 인증키를 넣습니다.
 
 검증:
 
