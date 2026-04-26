@@ -1,5 +1,5 @@
 {
-  "name": "seoul-openapi-mcp-server",
+  "name": "seoul-openapi-mcp",
   "version": "0.1.0",
   "description": "MCP server for Seoul Open Data OpenAPI services.",
   "type": "module",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ludens/seoul-mcp#readme",
   "bin": {
-    "seoul-openapi-mcp-server": "dist/index.js"
+    "seoul-openapi-mcp": "dist/index.js"
   },
   "publishConfig": {
     "access": "public"

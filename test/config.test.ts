@@ -14,7 +14,7 @@ describe("loadConfig", () => {
 
   test("throws an actionable error when API key is missing", () => {
     expect(() => loadConfig({})).toThrow(
-      "Set SEOUL_OPENAPI_KEY before starting seoul-openapi-mcp-server.",
+      "Set SEOUL_OPENAPI_KEY before starting seoul-openapi-mcp.",
     );
   });
 });

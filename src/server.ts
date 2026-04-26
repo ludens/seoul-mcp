@@ -5,7 +5,7 @@ import { registerOpenApiTools } from "./tools/openApiTools.js";
 
 export function createSeoulOpenApiMcpServer(config: AppConfig): McpServer {
   const server = new McpServer({
-    name: "seoul-openapi-mcp-server",
+    name: "seoul-openapi-mcp",
     version: "0.1.0",
   });
 

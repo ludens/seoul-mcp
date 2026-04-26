@@ -14,7 +14,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
 
   if (!apiKey) {
     throw new Error(
-      "Set SEOUL_OPENAPI_KEY before starting seoul-openapi-mcp-server.",
+      "Set SEOUL_OPENAPI_KEY before starting seoul-openapi-mcp.",
     );
   }
 

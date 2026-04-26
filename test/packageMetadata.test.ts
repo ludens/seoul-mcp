@@ -12,7 +12,7 @@ const packageJson = JSON.parse(readFileSync("package.json", "utf8")) as {
 describe("npm package metadata", () => {
   test("publishes a public executable package for npx usage", () => {
     expect(packageJson.bin).toEqual({
-      "seoul-openapi-mcp-server": "dist/index.js",
+      "seoul-openapi-mcp": "dist/index.js",
     });
     expect(packageJson.publishConfig).toEqual({ access: "public" });
     expect(packageJson.repository).toEqual({
@@ -30,6 +30,6 @@ describe("npm package metadata", () => {
   test("documents the npx command users should configure", () => {
     const readme = readFileSync("README.md", "utf8");
 
-    expect(readme).toContain("npx seoul-openapi-mcp-server");
+    expect(readme).toContain("npx seoul-openapi-mcp");
   });
 });
