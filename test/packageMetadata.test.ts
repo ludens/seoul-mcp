@@ -12,7 +12,7 @@ const packageJson = JSON.parse(readFileSync("package.json", "utf8")) as {
 
 describe("npm package metadata", () => {
   test("uses semver-compatible CalVer for package releases", () => {
-    expect(packageJson.version).toBe("2026.427.1");
+    expect(packageJson.version).toBe("2026.427.2");
   });
 
   test("publishes a public executable package for npx usage", () => {
